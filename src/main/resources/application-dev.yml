@@ -1,0 +1,14 @@
+
+spring:
+    datasource:
+        url: jdbc:mysql://awseb-e-3rv2rkhbxy-stack-awsebrdsdatabase-hnfx3ppsd3q3.cqg5ib0ei0ik.ap-northeast-2.rds.amazonaws.com
+        username: fastcam
+        password: 1kingbank
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
