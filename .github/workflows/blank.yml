@@ -2,11 +2,11 @@ name: fastcampus board
 
 env:
   AWS_REGION: ap-northeast-2
-  
+
 on:
   push:
     branches: [ main ]
-    
+
 jobs:
   deploy:
     name: Deploy
@@ -29,9 +29,9 @@ jobs:
       uses: 1466587594/get-current-time@v2
       id: current-time
       with:
-        format: YYYY-MM-DDTHH-mm-ss    
+        format: YYYY-MM-DDTHH-mm-ss
         utcOffset: "+09:00"
-        
+
     - name: Generate deployment package
       run: |
         mkdir -p deploy
@@ -46,5 +46,5 @@ jobs:
         region: ${{ env.AWS_REGION }}
         application_name: fc-board
         environment_name: Fc-board-env
-        version_label: github-action-${{steps.current-time.outputs.formattedTime}
+        version_label: github-action-${{steps.current-time.outputs.formattedTime}}
         deployment_package: deploy/deploy.zip
